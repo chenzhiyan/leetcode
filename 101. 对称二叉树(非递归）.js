@@ -24,7 +24,7 @@ var isSymmetric = function (root) {
         let a = q.shift();
         let b = q.shift();
         if (b == null && a == null) continue;
-        if (b == null || a == null||a.val!=b.val) return false;
+        if (b == null || a == null || a.val != b.val) return false;
         q.push(a.right);
         q.push(b.left);
         q.push(a.left);
