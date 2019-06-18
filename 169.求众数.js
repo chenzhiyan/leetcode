@@ -7,7 +7,8 @@
  * @param {number[]} nums
  * @return {number}
  */
-var majorityElement = function (nums) {
+//map法
+var majorityElement2 = function (nums) {
     let m = new Map();
     let half_n = nums.length >> 1;
     for (let value of nums) {
@@ -21,4 +22,20 @@ var majorityElement = function (nums) {
         m.set(value, count);
     }
 };
-majorityElement([3,2,3])
+
+//摩尔投票法
+var majorityElement = function (nums) {
+    let count = 0,n =0;
+    for(let value of nums){
+        if (count==0){
+            n=value;
+            count++;
+        }else if(value==n){
+            count++;
+        } else if (value != n) {
+            count--;
+        }
+    }
+    return n;
+};
+console.log(majorityElement([3, 3, 4]))
