@@ -2,7 +2,7 @@
  * @Author: 陈智焰 
  * @Date: 2019-06-25 20:51:29 
  * @Last Modified by: 陈智焰
- * @Last Modified time: 2019-06-25 21:00:19
+ * @Last Modified time: 2019-06-25 21:30:20
  */
 /*
  * @lc app=leetcode.cn id=229 lang=javascript
@@ -34,7 +34,7 @@ var majorityElement2 = function (nums) {
 
 //摩尔投票法
 var majorityElement = function (nums) {
-    let a,b;
+    let a, b;
     let countA = 0, countB = 0;
     for (let v of nums) {
         if (countA > 0 && countB > 0) {
@@ -46,7 +46,6 @@ var majorityElement = function (nums) {
             } else {
                 countB++;
             }
-
         } else if (countA > 0) {
             if (a == v) {
                 countA++;
@@ -64,7 +63,7 @@ var majorityElement = function (nums) {
         } else {
             a = v;
             countA++;
-            b =NaN;
+            b = NaN;
             //当a,b,票数都为0时,
             //下一个人会先顶掉a,
             //如果下一个人是最后一个人,则b会被保留,例子[0,-1,2,-1]
@@ -85,4 +84,4 @@ var majorityElement = function (nums) {
         res.push(b)
     return res;
 };
-console.log(majorityElement([0,-1,2,-1]))
+console.log(majorityElement([0, -1, 2, -1]))
